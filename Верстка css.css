@@ -1,0 +1,184 @@
+
+html {
+
+       background: url(pattern.png) no-repeat center center fixed;
+
+       -webkit-background-size: cover;
+
+       -moz-background-size: cover;
+
+       -o-background-size: cover;
+
+       background-size: cover;
+
+}
+
+
+.Centered {
+/* Ты сегодня покормил */
+
+position: absolute;
+width: 1120px;
+height: 44px;
+left: 80px;
+top: 36px;
+
+/* Header */
+
+font-family: 'Exo 2', sans-serif;
+font-size: 36px;
+line-height: 44px;
+/* identical to box height, or 122% */
+text-align: center;
+
+color: #FFFFFF;
+
+text-shadow: 0px 1px 1px #000000;
+
+}
+
+.inner {
+    position: absolute;
+width: 320px;
+height: 509px;
+left: 170px;
+top: 114px;
+}
+
+.inner2 {
+    position: absolute;
+width: 320px;
+height: 509px;
+left: 640px;
+top: 114px;
+}
+
+.inner3 {
+    position: absolute;
+width: 320px;
+height: 509px;
+left: 1100px;
+top: 114px;
+}
+
+.defaultHover {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 160px;
+    top: 784px;
+
+}
+
+.defaultHover2 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 630px;
+    top: 784px;
+}
+
+.defaultHover3 {
+    position: absolute;
+width: 320px;
+height: 509px;
+left: 1100px;
+top: 784px;
+}
+
+.Selected {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 160px;
+    top: 1484px;
+}
+
+.Selected2 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 630px;
+    top: 1484px;
+}
+
+.Selected3 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 1100px;
+    top: 1484px;
+}
+
+.selectedHover {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 160px;
+    top: 2174px;
+}
+
+.selectedHover2 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 630px;
+    top: 2174px;
+}
+
+.selectedHover3 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 1100px;
+    top: 2174px;
+}
+
+.disabled {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 160px;
+    top: 2800px;
+}
+
+.disabled2 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 630px;
+    top: 2800px;
+}
+
+.disabled3 {
+    position: absolute;
+    width: 320px;
+    height: 509px;
+    left: 1100px;
+    top: 2800px;
+}
+
+.text {
+    position: absolute;
+    width: 500px;
+    height: 44px;
+    left: 550px;
+    top: 33px;
+    
+    /* Header */
+    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height, or 122% */
+    
+    
+    
+    color: #FFFFFF;
+    
+    text-shadow: 0px 1px 1px #000000;
+
+
+}
