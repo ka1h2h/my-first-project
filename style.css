@@ -103,9 +103,11 @@
 }
 
 span {
+    display: inline-block;
     font-weight: normal;
     font-size: 22px;
     color: #FFFFFF;
+    margin-top: -5px;
 }
 
 .bottom-text {
