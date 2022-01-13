@@ -7,9 +7,9 @@
 .container {
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    justify-content: center;
     background-image: url(pattern.png);
-
+    height: 100vh;
 }
 
 
@@ -119,4 +119,13 @@
     font-weight: normal;
     font-size: 13px;
     color: #FFFFFF;
+}
+
+/* Example styles */
+
+.example-container {
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
