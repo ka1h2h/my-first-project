@@ -15,3 +15,9 @@
  :question::question::question::question::question::question::question:
  
  Почему я не могу чуть подтянуть выше "кг", я ему пытался задать разные значения, но он стоит как вкопанный
+ 
+ :heavy_exclamation_mark::heavy_exclamation_mark::heavy_exclamation_mark::heavy_exclamation_mark:
+ 
+ Потому что это строчный элемент, у которого значение по умолчанию inline. Я придал ему свойство inline-block и добавил margin-top, чтобы "кг" подвинуть чуть выше, чтобы смотрелось лучше
+ 
+ Возможно так нельзя делать, но это выход, который я нашел
