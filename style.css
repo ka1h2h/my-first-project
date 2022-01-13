@@ -12,6 +12,10 @@
     height: 100vh;
 }
 
+.card {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: normal;
+}
 
 .frame {
     position: relative;
@@ -19,7 +23,6 @@
     border-radius: 12px;
     padding-top: 21px;
     padding-left: 48px;
-    padding-right: 61px;
     width: 300px;
     height: 470px;
     background-color: #F2F2F2;
@@ -52,12 +55,6 @@
   }
 
 
-.content {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-style: normal;
-    white-space: nowrap;
-}
-
 
 
 .notice {
@@ -77,7 +74,13 @@
     font-weight: bold;
     font-size: 24px;
     color: #000000;
-    margin-right: 90px;
+}
+
+.portion {
+    font-weight: normal;
+    font-size: 14px;
+    color:#666666;
+    padding-top: 10px;
 }
 
 .weight-circle {
@@ -89,33 +92,25 @@
     height: 80px;
     border-radius: 50%;
     background: #2EA8E6;
+    text-align: center;
 }
 
 .weight {
-
-    position: absolute;
-    top: 20px;
-    left: 10px;
-    font-family: Trebuchet MS;
-    font-style: normal;
     font-weight: normal;
     font-size: 42px;
-    line-height: 22px;
     color: #FFFFFF;
+    margin-top: 5px;
 }
 
-.weight span {
-    position: absolute;
+span {
+    font-weight: normal;
     font-size: 22px;
-    top: 30px;
-    left: 20px;
+    color: #FFFFFF;
 }
 
 .bottom-text {
     padding-top: 10px;
     text-align: center;
-    font-family: Trebuchet MS;
-    font-style: normal;
     font-weight: normal;
     font-size: 13px;
     color: #FFFFFF;
