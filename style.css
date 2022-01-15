@@ -30,9 +30,11 @@
     background-position: -10px 240px;
     background-size: contain;
     background-repeat: no-repeat;
+
+
   }
   
-  .frame::before {
+  .frameBorder {
     content: '';
     position: absolute;
     z-index: 1;
@@ -40,6 +42,8 @@
     width: 4px;
     background-color: #1698D9;
     transform: translate(-30px, -32px) rotate(45deg);
+
+   
   }
   
   .frame::after {
@@ -52,16 +56,34 @@
     background-color: #1D1D1D;
     background-image: url("pattern.png");
     transform: translate(-35px, -34px) rotate(45deg);
+
+    
   }
-
-
 
 
 .notice {
     font-weight: normal;
     font-size: 16px;
     color: #666666;
+
+}   
+
+
+
+
+.card:hover .hover {
+    display: none;
+    font-weight: normal;
+    font-size: 16px;
+    color: #D91667;
 }
+
+.hover {
+    display: none;
+}
+
+/* обработать через mouseover **/
+
 
 .title {
     font-weight: bold;
@@ -95,6 +117,7 @@
     text-align: center;
 }
 
+
 .weight {
     font-weight: normal;
     font-size: 42px;
@@ -110,13 +133,43 @@ span {
     margin-top: -5px;
 }
 
+
 .bottom-text {
     padding-top: 10px;
     text-align: center;
     font-weight: normal;
     font-size: 13px;
     color: #FFFFFF;
+ 
 }
+
+.bottom-selected {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 13px;
+    color: #FFFFFF;
+    display: none;
+   
+}
+/* .bottom-hover {
+    display: none;
+} */
+
+/* .card:hover .bottom-hover {
+    padding-top: 10px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 13px;
+    color: #FFFFFF;
+    display: block;
+} */
+
+/* .card:hover .bottom-text {
+    display: none;
+} */
+
+
 
 /* Example styles */
 
