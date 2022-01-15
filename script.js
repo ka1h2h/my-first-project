@@ -20,7 +20,7 @@
 * Внимательно просмотри данные продуктов https://hostave.net/demo/, какие-то из них прийдется вычислить для вставки в html
 * */
 
-const exampleCardHtml = `
+const exampleCardHtml = ` 
     <div class="card">
         <div class="frame">
             <div class="content">
@@ -50,4 +50,51 @@ function ProductsCards(selector) {
 }
 
 ProductsCards('[data-products]');
+
+
+
+let selectedHover = document.querySelector('.hover')
+let def = document.querySelector('.notice')
+let defaultSelect = document.querySelector('.frame')
+let weightColor = document.querySelector('.weight-circle')
+let bottomSelected = document.querySelector('.bottom-selected')
+let bottomDefault = document.querySelector('.bottom-text')
+let frameBorder = document.querySelector('.frameBorder')
+// let upperoBorder =  window.getComputedStyle(defaultSelect, ":before")
+
+
+let cardSelect = document.querySelector('.card');
+cardSelect.addEventListener('click', function () {
+    selectedHover.style.display='inline';
+    def.style.display='none';
+    defaultSelect.style.border='4px solid #D91667'
+    /* достучаться до псевдоселектора */
+    weightColor.style.background='#D91667'
+    bottomDefault.style.display = 'none'
+    bottomSelected.style.display = 'block'
+    frameBorder.style.backgroundColor='#D91667'
+    
+
+defaultSelect.onmouseover = logMouseOver
+defaultSelect.onmouseout = logMouseOut
+
+function logMouseOver(cardSelect) { 
+    hov.style.display = 'block'
+    def.style.display = 'none'
+}
+
+function logMouseOut(cardSelect) {
+    def.style.display = 'block'
+    hov.style.display = 'none'
+}
+});
+
+
+
+
+
+// let upperoBrder = window.getComputedStyle(
+// 	document.querySelector('.frame'), ':after'
+// ).getPropertyValue('#F2F2F2');
+
 
