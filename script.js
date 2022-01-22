@@ -25,21 +25,23 @@ function fetchProductsAndPromotion() {
 }
 
 function ProductsCards(selector) {
+  // NOTICE 1: я специально передавал сюда строку селектора, зачем ты поменял выборку по 55 id
   const container = document.getElementById("55");
 
-  // ProductsCards("[data-products]");
-
   fetchProductsAndPromotion().then((data) => {
-    console.log(data.products);
 
     const cardInfo = data.products.map(function (cards) {
-      return createCardLayout(cards);
+      // NOTICE 2: пора и promotion высчитать
+      return createCardLayout(cards, data.promotion);
     });
 
     const arCard = cardInfo.join();
     container.innerHTML = arCard;
-
-    function createCardLayout(cards) {
+    // NOTICE 3: вынеси createCardLayout на один уроверь с функцией ProductsCards
+    // ей не нужно быть вложенной в ProductsCards, почитай подробнее про области видимости функций
+    function createCardLayout(cards, promotion) {
+      // NOTICE 4: посчитай promotion и выведи в html количество мышей и надпись при самой большом значении скидки
+      // NOTICE 5: убери id аттрибуты, они должны быть уникальны, а сейчас ты создаешь по 3 штуки каждого
       return `
             <div class="card" id="123">
               <div class="frame" id="frameSelected">
@@ -74,7 +76,12 @@ function ProductsCards(selector) {
           </div>
           `;
     }
-
+    // NOTICE 6: ок, в манипуляциях с элементами ты разобрался, но в реальных проектах так не делают
+    // теперь вместо выборки этих 10 элементов будем работать через добавление/удаление класса,
+    // при клике будем добавлять к карточке класс .selected ( есть такой метод API Element.classList, почитай )
+    // в файл style.css опишем как добавление этого класса повлияет на другие селекторы,
+    // например .selected .frame { border: 4px solid rgb(217, 22, 103); } и так же другие элементы которые визуально
+    // затрагивает состояние selected
     let selectedHover = document.querySelector(".hover");
     let portion = document.getElementById("amount");
     let weight = document.getElementById("weight");
@@ -89,6 +96,12 @@ function ProductsCards(selector) {
     // const cardSelectTwo = document.querySelectorAll("#123")[1].innerHTML;
     // console.log(cardSelectTwo);
 
+    // NOTICE 7: тут ты повесил событие обработки клика только на один элемент,
+    // а нам нужно обрабатывать все, для этого есть очень полезный подход - делегирование событий
+    // https://learn.javascript.ru/event-delegation
+    // NOTICE 8: мы должны написать такой код, чтобы каждая карточка была кликабельна
+    // Т.е, при клике на карточку мы визуально подсвечиваем ее как выбранную, при повторном клике на выбранную карточку
+    // мы убираем ей выбранное состояние
     const cardSelectOne = document.querySelector(".card");
     console.log(cardSelectOne);
     cardSelectOne.addEventListener("click", function () {
@@ -99,7 +112,7 @@ function ProductsCards(selector) {
       bottomDefault.style.display = "none";
       bottomSelected.style.display = "block";
       frameBorder.style.backgroundColor = "#D91667";
-
+      // NOTICE 9: эти события нужно описать отдельными addEventListener на mouseover и mouseout
       defaultSelect.onmouseover = logMouseOver;
       defaultSelect.onmouseout = logMouseOut;
       function logMouseOver(cardSelectOne) {
