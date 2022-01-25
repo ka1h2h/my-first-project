@@ -50,13 +50,12 @@ function createCardLayout(products, promotion) {
     giftValue = "";
   }
   return `
-      <div class="card" id="55">
+      <div class="card">
         <div class="frame">
           <div class="frameBorder"></div>
             <div class="content">
               <div class="notice" id="def">Сказочное заморское яство</div>
               <div class="hover" id="hov">Котэ не одобряет?</div>
-
               <div class="title">Нямушка</div>
               <div class="taste" id="with">${products.taste}</div>
               <div class="portion">
@@ -65,7 +64,6 @@ function createCardLayout(products, promotion) {
                    <strong id="50">${compliment}</strong>
                   </div>
                 </div>
-
             <div class="weight-circle">
               <div class="weight" id=kg>${
                 products.packWeight * products.packsAmount
@@ -73,32 +71,21 @@ function createCardLayout(products, promotion) {
               <span>кг</span>
               </div>
             </div>
-
             <div class="bottom-text">
                 Чего сидишь? Порадуй котэ, <a href="#">купи.</a>
               </div>
               <div class="bottom-selected">Печень утки разварная с артишоками.</div>
+            </div>
             </div>
           </div>
           `;
 }
 
 const cont = document.querySelector(".container");
-
-const cardClick = cont.addEventListener("click", function (event) {
-  let click = event.target.className === "frame";
-  if (click) return event.target.classList.toggle("selected");
-  event.target.classList.remove("selected");
-});
-
-// cont.addEventListener("mouseover", function (event) {
-//   let over = event.target.className === "frame";
-//   if (over) event.target.classList.toggle("selected .frame");
-// });
+cont.onclick = function (event) {
+  let td = event.target.closest(".card");
+  if (!td) return;
+  td.classList.toggle("selected");
+};
 
 ProductsCards("[data-products]");
-// const cardClick = cont.addEventListener("click", function (event) {
-//   let click = event.target.className === "frame";
-//   if (click) return event.target.classList.toggle("selected");
-//   event.target.classList.remove("selected");
-// });
