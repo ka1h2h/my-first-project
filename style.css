@@ -14,9 +14,6 @@
   justify-content: center;
   background-image: url(pattern.png);
   height: 100vh;
-
-
-  
 }
 
 
@@ -25,6 +22,8 @@
     "Lucida Sans", Arial, sans-serif;
   font-style: normal;
   padding: 50px;
+ 
+
 }
 
 .frame {
@@ -41,7 +40,9 @@
   background-size: contain;
   background-repeat: no-repeat;
  
+ 
 }
+
 
 .frameBorder {
   content: "";
@@ -65,24 +66,18 @@
   transform: translate(-35px, -34px) rotate(45deg);
 }
 
+
 .notice {
   font-weight: normal;
   font-size: 16px;
   color: #666666;
 }
 
-.card:hover .hover {
-  display: none;
-  font-weight: normal;
-  font-size: 16px;
-  color: #d91667;
-}
 
 .hover {
   display: none;
 }
 
-/* обработать через mouseover **/
 
 .title {
   font-weight: bold;
@@ -146,25 +141,45 @@ span {
   display: none;
 }
 
+.selected  {
+  
+  border: 4px solid #E52E7A;
+ 
+ 
+}
+
+.selected .frameBorder {
+  
+  background-color: #E52E7A;
+  
+}
 
 
-/* .bottom-hover {
-    display: none;
-} */
 
-/* .card:hover .bottom-hover {
-    padding-top: 10px;
-    text-align: center;
-    font-weight: normal;
-    font-size: 13px;
-    color: #FFFFFF;
-    display: block;
-} */
+.selected:hover .notice {
+ 
+  color: #E52E7A;
+  display: none;
+  
+}
 
-/* .card:hover .bottom-text {
-    display: none;
-} */
 
-/* Example styles */
+.selected:hover .hover {
+  display: block;
+  color: #E52E7A;
+}
+
+
+
+
+
+
+.selected .weight-circle {
+ 
+  background: #E52E7A;
+ 
+}
+
+
 
 
