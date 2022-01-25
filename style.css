@@ -17,14 +17,16 @@
 }
 
 
+
 .card {
+  
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-style: normal;
-  padding: 50px;
- 
-
+  padding: 50px;  
+  
 }
+
 
 .frame {
   position: relative;
@@ -39,8 +41,6 @@
   background-position: -10px 240px;
   background-size: contain;
   background-repeat: no-repeat;
- 
- 
 }
 
 
@@ -141,7 +141,7 @@ span {
   display: none;
 }
 
-.selected  {
+.selected .frame {
   
   border: 4px solid #E52E7A;
  
