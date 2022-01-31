@@ -32,7 +32,7 @@ function ProductsCards(selector) {
       return createCardLayout(products, data.promotion);
     });
 
-    const arCard = cardInfo.join();
+    const arCard = cardInfo.join("");
     container.innerHTML = arCard;
   });
 }
@@ -40,6 +40,8 @@ function ProductsCards(selector) {
 function createCardLayout(products, promotion) {
   let giftValue = products.packsAmount / promotion.everyProductsAmount;
   let compliment;
+  let isActive = products.isActive;
+
   if (giftValue == 5) {
     compliment = promotion.giftMaxValueComplimentText;
   } else {
@@ -49,8 +51,15 @@ function createCardLayout(products, promotion) {
   if (giftValue < 1) {
     giftValue = "";
   }
+  cont.addEventListener("click", function (event) {
+    let td = event.target.closest(".card");
+    if (!td) return;
+    td.classList.toggle("selected");
+  });
+
   return `
-      <div class="card">
+  
+      <div class="card ${isActive ? " " : "disabled"}">
         <div class="frame">
           <div class="frameBorder"></div>
             <div class="content">
@@ -72,9 +81,13 @@ function createCardLayout(products, promotion) {
               </div>
             </div>
             <div class="bottom-text">
-                Чего сидишь? Порадуй котэ, <a href="#">купи.</a>
+            Чего сидишь? Порадуй котэ, <a href="#">купи.</a>
               </div>
-              <div class="bottom-selected">Печень утки разварная с артишоками.</div>
+              <div class="bottom-selected">${products.description}</div>
+              <div class="bottom-disabled">Печалька, ${
+                products.taste
+              } закончился</div>
+            </div>
             </div>
             </div>
           </div>
@@ -82,10 +95,5 @@ function createCardLayout(products, promotion) {
 }
 
 const cont = document.querySelector(".container");
-cont.onclick = function (event) {
-  let td = event.target.closest(".card");
-  if (!td) return;
-  td.classList.toggle("selected");
-};
 
 ProductsCards("[data-products]");
