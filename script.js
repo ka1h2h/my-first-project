@@ -41,16 +41,20 @@ function createCardLayout(products, promotion) {
   let giftValue = products.packsAmount / promotion.everyProductsAmount;
   let compliment;
   let isActive = products.isActive;
-
+  // нестрогое сравнение лучше не использовать https://learn.javascript.ru/comparison#strogoe-sravnenie
   if (giftValue == 5) {
     compliment = promotion.giftMaxValueComplimentText;
   } else {
+    // != это оператор сравнения ты ничего не происходит и значит это просто лишний код
     giftValue != 5;
+    // тут можно не присваивать пустую строку, она все равно будет пустой
     compliment = "";
   }
   if (giftValue < 1) {
     giftValue = "";
   }
+  // функция createCardLayout вызывается в цикле обхода products, получается ты создал 3 обработчика
+  // которые делаю одно и то же
   cont.addEventListener("click", function (event) {
     let td = event.target.closest(".card");
     if (!td) return;
