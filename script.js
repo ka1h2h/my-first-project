@@ -56,8 +56,13 @@ function createCardLayout(products, promotion) {
   // функция createCardLayout вызывается в цикле обхода products, получается ты создал 3 обработчика
   // которые делаю одно и то же
   cont.addEventListener("click", function (event) {
+    // плохое название переменной, привыкай именовать осмысленно
     let td = event.target.closest(".card");
     if (!td) return;
+    // есть у тебя технический просчет, ты добавляешь/удаляешь selected даже карточке в состоянии disabled
+    // и тебе даже в стилях приходится обнулять hover и прочую ерунду которая пролазит в в disabled состояние карточки из-за
+    // selected класса - поздравляю Илюх)) это называет костыль в коде))
+    // правильно будет не присваивать класс selected и не обрабатывать карточки с классом disabled
     td.classList.toggle("selected");
   });
 
