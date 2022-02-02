@@ -41,19 +41,28 @@ function createCardLayout(products, promotion) {
   let giftValue = products.packsAmount / promotion.everyProductsAmount;
   let compliment;
   let isActive = products.isActive;
-
+  // нестрогое сравнение лучше не использовать https://learn.javascript.ru/comparison#strogoe-sravnenie
   if (giftValue == 5) {
     compliment = promotion.giftMaxValueComplimentText;
   } else {
+    // != это оператор сравнения ты ничего не происходит и значит это просто лишний код
     giftValue != 5;
+    // тут можно не присваивать пустую строку, она все равно будет пустой
     compliment = "";
   }
   if (giftValue < 1) {
     giftValue = "";
   }
+  // функция createCardLayout вызывается в цикле обхода products, получается ты создал 3 обработчика
+  // которые делаю одно и то же
   cont.addEventListener("click", function (event) {
+    // плохое название переменной, привыкай именовать осмысленно
     let td = event.target.closest(".card");
     if (!td) return;
+    // есть у тебя технический просчет, ты добавляешь/удаляешь selected даже карточке в состоянии disabled
+    // и тебе даже в стилях приходится обнулять hover и прочую ерунду которая пролазит в в disabled состояние карточки из-за
+    // selected класса - поздравляю Илюх)) это называет костыль в коде))
+    // правильно будет не присваивать класс selected и не обрабатывать карточки с классом disabled
     td.classList.toggle("selected");
   });
 
