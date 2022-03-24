@@ -15,8 +15,6 @@ function ProductsCards(selector) {
   });
 }
 
-// в качестве параметра функция createCardLayout принимает 1 продукт по этому product - это более верный нейминг
-// чем products, мы пишем код для людей
 function createCardLayout(products, promotion) {
   let giftValue = products.packsAmount / promotion.everyProductsAmount;
   let compliment = "";
@@ -33,11 +31,6 @@ function createCardLayout(products, promotion) {
   }
 
   cont.addEventListener("click", function (event) {
-    // через event.target.closest мы можем получить карточку по селектору .card
-    // и с ней работать, вот как можно
-    // const card = event.target.closest(".card");
-    // if (card.classList.contains('disabled')) return;
-    // card.classList.toggle("selected");
     let targetDisabled = event.target.closest(".card.disabled");
     let targetEnabled = event.target.closest(".card");
     if (targetDisabled) return;
@@ -45,7 +38,6 @@ function createCardLayout(products, promotion) {
   });
 
   return `
-  
       <div class="card ${isActive ? " " : "disabled"}">
         <div class="frame">
           <div class="frameBorder"></div>
