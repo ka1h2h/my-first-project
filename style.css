@@ -3,16 +3,11 @@
   margin: 0;
   padding: 0;
   background-size: 100%, 100%;
-  
-  
 }
 
 .pattern {
   position: relative;
   padding-top: 70px;
-  
-  
-  
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-style: normal;
   font-size: 36px;
@@ -30,23 +25,15 @@
   background-image: url(pattern.png);
   height: 100vh;
   padding-top: 50px;
-  
-  
 }
 
-
-
-
 .card  {
-  
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
+  "Lucida Sans", Arial, sans-serif;
   font-style: normal;
   padding: 50px;
   padding-top: 0px;
-  
 }
-
 
 .frame {
   position: relative;
@@ -62,7 +49,6 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 
 .frameBorder {
   content: "";
@@ -86,18 +72,15 @@
   transform: translate(-35px, -34px) rotate(45deg);
 }
 
-
 .notice {
   font-weight: normal;
   font-size: 16px;
   color: #666666;
 }
 
-
 .hover {
   display: none;
 }
-
 
 .title {
   font-weight: bold;
@@ -153,10 +136,6 @@ span {
   display: block;
 }
 
-
-
-
-
 .bottom-selected {
   padding-top: 10px;
   text-align: center;
@@ -167,92 +146,67 @@ span {
 }
 
 .selected .frame {
-  
   border: 4px solid #E52E7A;
- 
  
 }
 
 .selected .frameBorder {
-  
   background-color: #E52E7A;
-  
 }
-
-
 
 .selected:hover .notice {
   display: none;
 }
-
 
 .selected:hover .hover {
   display: block;
   color: #E52E7A;
 }
 
-
 .selected .bottom-text {
   display: none;
 }
-
-
 
 .selected .bottom-selected {
   display: block;
 }
 
-
-
-
 .selected .weight-circle {
- 
   background: #E52E7A;
- 
 }
-
 
 .disabled .frame  {
   position: relative;
   border: 4px solid #979797;
   background-color: rgba(242, 242, 242, 0.9);
   filter: grayscale(60%);
-  
-  
 }   
 
 .disabled .frameBorder{
   filter: grayscale(60%);
   background-color: #979797;
-  
 }
 
 .disabled .content {
   opacity: 0.4;
-  
 }
- 
 
 .disabled .bottom-disabled {
-  
   margin-top: 10px;
   text-align: center;
   font-weight: normal;
   font-size: 13px;
   color: #FFFF66;
   height: 35px
-  
 }
 
 .disabled .bottom-text {
   display: none;
-
 }
 
 .disabled .weight-circle {
   background: #979797;
   background-color: rgba(100, 94, 94, 0.3);
-  
 }
 
 
